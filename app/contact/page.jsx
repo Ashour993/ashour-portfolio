@@ -51,7 +51,7 @@ const Contact = () => {
     setStatus("sending");
     try {
       await emailjs.send(
-        "service_afi6uzo",
+        "service_samfs5s",
         "template_93nkwbd",
         {
           title: form.service,
