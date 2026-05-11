@@ -40,6 +40,7 @@ const Contact = () => {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -53,6 +54,7 @@ const Contact = () => {
         "service_4o84jlv",
         "template_93nkwbd",
         {
+          title: form.service,
           firstname: form.firstname,
           lastname: form.lastname,
           email: form.email,
@@ -64,7 +66,10 @@ const Contact = () => {
       );
       setStatus("success");
       setForm({ firstname: "", lastname: "", email: "", phone: "", service: "", message: "" });
-    } catch {
+    } catch (err) {
+      const msg = err?.text || err?.message || JSON.stringify(err);
+      console.error("EmailJS error:", msg);
+      setErrorMsg(msg);
       setStatus("error");
     }
   };
@@ -119,7 +124,7 @@ const Contact = () => {
                 {status === "sending" ? "Sending..." : "Send message"}
               </Button>
               {status === "success" && <p className="text-green-400">Meddelandet skickades!</p>}
-              {status === "error" && <p className="text-red-400">Något gick fel, försök igen.</p>}
+              {status === "error" && <p className="text-red-400">Fel: {errorMsg || "Något gick fel, försök igen."}</p>}
             </form>
           </div>
           {/* info */}
