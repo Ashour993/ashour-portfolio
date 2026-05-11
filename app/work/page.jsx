@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 
 import {
   Tooltip,
@@ -22,36 +22,24 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "full stack",
     title: "project 1",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+      "This project is a Spring Boot based web application with login, registration, and product and order management. The application uses Java, Spring Security, Thymeleaf, and database connectivity to create a simple e-commerce-like solution.",
+    stack: [{ name: "Html " }, { name: "Css " }, { name: "Java" }, { name: "Spring Security" }],
     image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+    github: "https://github.com/plugga-tech/login-Ashour993 ",
   },
   {
     num: "02",
     category: "fullstack",
     title: "project 2",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+      "This project is a Spring Boot based web application that fetches and displays Pokémon data from an external API. The application uses Java, Spring Boot, REST API integration, and a frontend built with HTML, CSS, and JavaScript to create a dynamic Pokémon browsing experience with support for saving favorites.",
+    stack: [{ name: "Java " }, { name: "Css " }, { name: "Html " }, { name: "JavaScript " }, { name: "Spring Boot " }],
     image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "03",
-    category: "frontend",
-    title: "project 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    githubFrontend: "https://github.com/plugga-tech/skapa-en-tj-nst-utifr-n-ett-api-frontend-Ashour993",
+    githubBackend: "https://github.com/plugga-tech/skapa-en-tj-nst-utifr-n-ett-api-backend-Ashour993",
   },
 ];
 
@@ -104,32 +92,54 @@ const Work = () => {
               <div className="border border-white/20"></div>
               {/* buttons */}
               <div className="flex items-center gap-4">
-                {/* live project button */}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                {/* github project button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+
+                {/* single github button */}
+                {project.github && (
+                  <Link href={project.github}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
+
+                {/* frontend github button */}
+                {project.githubFrontend && (
+                  <Link href={project.githubFrontend}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Frontend repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
+
+                {/* backend github button */}
+                {project.githubBackend && (
+                  <Link href={project.githubBackend}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Backend repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -151,7 +161,7 @@ const Work = () => {
                         <Image
                           src={project.image}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                           alt=""
                         />
                       </div>

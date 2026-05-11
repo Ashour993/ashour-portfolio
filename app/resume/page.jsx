@@ -7,48 +7,52 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaJava,
+  
+ 
+ 
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiPostman,SiTypescript, SiSpringboot, SiSpringsecurity, SiMongodb, SiMysql, SiDocker, SiStripe } from "react-icons/si";
+
+const JakartaEEIcon = () => (
+  <svg viewBox="0 0 128 128" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="64,4 120,34 120,94 64,124 8,94 8,34" fill="none" stroke="currentColor" strokeWidth="8" />
+    <text x="64" y="58" textAnchor="middle" fontSize="22" fontWeight="bold" fill="currentColor">JEE</text>
+    <text x="64" y="82" textAnchor="middle" fontSize="13" fill="currentColor">Jakarta</text>
+  </svg>
+);
+const Quarkus = () => (
+  <svg viewBox="0 0 128 128" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="64,4 120,34 120,94 64,124 8,94 8,34" fill="none" stroke="currentColor" strokeWidth="8" />
+    <text x="64" y="58" textAnchor="middle" fontSize="22" fontWeight="bold" fill="currentColor">QU</text>
+    <text x="64" y="82" textAnchor="middle" fontSize="13" fill="currentColor">Quarkus</text>
+  </svg>
+);
 
 // about data
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "I'm a Java developer student at Jönköping University with a passion for building clean and efficient applications. I enjoy working with both backend and frontend technologies, and I'm always looking to learn and grow as a developer.",
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Luke Coleman",
+      fieldValue: "Ashour Malik Ismail",
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "American",
+      fieldValue: "(+46) 73 987 5774",
     },
     {
       fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldValue: "book.ashour@gmail.com",
     },
     {
-      fieldName: "Freelance",
-      fieldValue: "Available",
+      fieldName: "Nationality",
+      fieldValue: "Assyrian/Swedish",
     },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish",
-    },
+   
   ],
 };
 
@@ -56,38 +60,26 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Fagerhult Belysning AB",
+      position: "installation of lighting fixtures. ",
+      duration: "2016 - Present",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "Brooklyn Burgare",
+      position: "Cashier and Customer Service",
+      duration: "2022 - 2024",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
+      company: "Fagerhult Belysning AB",
+      position: "Operator of plastic machinery",
+      duration: "2022 - 2024",
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "PostNord AB",
+      position: "Worker",
+      duration: "2025",
     },
   ],
 };
@@ -96,38 +88,16 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "Folkuniversitetet",
+      degree: "Programming 1 'java' ",
+      duration: "2025",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
-    },
-    {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "Jönköping University",
+      degree: "Java developer",
+      duration: "2025 - present",
     },
   ],
 };
@@ -135,8 +105,6 @@ const education = {
 // skills data
 const skills = {
   title: "My skills",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -169,6 +137,50 @@ const skills = {
     {
       icon: <FaFigma />,
       name: "figma",
+    },
+    {
+      icon: <FaJava />,
+      name: "java",
+    },
+    {
+      icon: <SiPostman />,
+      name: "postman",
+    },
+    {
+      icon: <SiTypescript />,
+      name: "typescript",
+    },
+    {
+      icon: <SiSpringboot />,
+      name: "spring boot",
+    },
+    {
+      icon: <SiSpringsecurity />,
+      name: "spring security",
+    },
+    {
+      icon: <JakartaEEIcon />,
+      name: "jakarta EE",
+    },
+    {
+      icon: <SiMongodb />,
+      name: "mongodb",
+    },
+    {
+      icon: <SiMysql />,
+      name: "mysql",
+    },
+    {
+      icon: <SiDocker />,
+      name: "docker",
+    },
+     {
+      icon: <SiStripe />,
+      name: "stripe",
+    },
+    {
+      icon: <Quarkus />,
+      name: "quarkus",
     },
   ],
 };
@@ -322,8 +334,8 @@ const Resume = () => {
                         key={index}
                         className="flex items-center justify-center xl:justify-start gap-4"
                       >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
+                        <span className="text-white/60 text-sm">{item.fieldName}</span>
+                        <span className="text-base">{item.fieldValue}</span>
                       </li>
                     );
                   })}

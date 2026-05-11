@@ -1,27 +1,32 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import CountUp from "react-countup";
-
-const stats = [
-  {
-    num: 12,
-    text: "Years of experience",
-  },
-  {
-    num: 26,
-    text: "Projects completed",
-  },
-  {
-    num: 8,
-    text: "Technologies mastered",
-  },
-  {
-    num: 500,
-    text: "Code commits",
-  },
-];
-
 const Stats = () => {
+  const [commits, setCommits] = useState(null);
+  const [repos, setRepos] = useState(null);
+
+  const examDate = new Date("2027-05-31");
+  const today = new Date();
+  const daysToExam = Math.ceil((examDate - today) / (1000 * 60 * 60 * 24));
+
+  useEffect(() => {
+    fetch("/api/github-stats")
+      .then((r) => r.json())
+      .then((data) => {
+        if (typeof data.commits === "number") setCommits(data.commits);
+            if (typeof data.repos === "number") setRepos(data.repos);
+      })
+      .catch(() => {});
+  }, []);
+
+  const stats = [
+    { num: repos ?? 0, text: "GitHub repos" },
+    { num: commits ?? 0, text: "Code commits" },
+    { num: daysToExam, text: "To be a JavaDeveloper" },
+  ];
+
+   
+ 
   return (
     <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
       <div className="container mx-auto">
