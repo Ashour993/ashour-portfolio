@@ -87,6 +87,12 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
+            <a
+              href="mailto:book.ashour@gmail.com"
+              className="text-accent underline mb-4 block"
+            >
+              Kontakta mig direkt: book.ashour@gmail.com
+            </a>
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
               {/* input */}
@@ -97,7 +103,7 @@ const Contact = () => {
                 <Input name="phone" value={form.phone} onChange={handleChange} type="text" placeholder="Phone number" />
               </div>
               {/* select */}
-              <Select onValueChange={(val) => setForm({ ...form, service: val })}>
+              {/* <Select onValueChange={(val) => setForm({ ...form, service: val })}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -109,7 +115,7 @@ const Contact = () => {
                     <SelectItem value="Logo Design">Logo Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
-              </Select>
+              </Select> */}
               {/* textarea */}
               <Textarea
                 name="message"
